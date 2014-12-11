@@ -91,14 +91,12 @@ class cfs_single extends cfs_field
 			</td>
 			<td>
 				<?php
-					if ( ! is_null( $this->parent ) ) {
-						$this->parent->create_field( array(
-								'type'          => 'select',
-								'input_name'    => "cfs[fields][$key][options][post_types]",
-								'options'       => array( 'multiple' => '1', 'choices' => $choices ),
-								'value'         => $this->get_option( $field, 'post_types' ),
-							));
-					}
+					CFS()->create_field( array(
+							'type'          => 'select',
+							'input_name'    => "cfs[fields][$key][options][post_types]",
+							'options'       => array( 'multiple' => '1', 'choices' => $choices ),
+							'value'         => $this->get_option( $field, 'post_types' ),
+						));
 				?>
 			</td>
 		</tr>
